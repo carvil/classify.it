@@ -1,5 +1,11 @@
 require 'sinatra'
 
 get '/' do
-  'Hello world!'
+  haml :home
+end
+
+post '/' do
+  site = params[:site]
+  puts site
+  haml :home
 end
