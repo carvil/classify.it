@@ -1,0 +1,17 @@
+%html
+  %head
+    %title Classify.it
+    %link{href: '/stylesheets/bootstrap.css', rel: 'stylesheet', type: 'text/css'}
+    %link{href: '/stylesheets/docs.css', rel: 'stylesheet', type: 'text/css'}
+  %body
+    %div{class: "container"}
+      %header{class: "jumbotron masthead"}
+        %div{class: "inner"}
+          %h1 Is it a tech site?
+          %p Simply paste a url to check...
+      =yield
+      %div{class: "footer"}
+        %p{style: "text-align: center"}
+          Why was this built? Check 
+          %a{href: "http://carvil.github.com"} carvil.github.com
+          for more details
