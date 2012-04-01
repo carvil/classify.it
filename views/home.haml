@@ -8,3 +8,5 @@
               %div{class: "controls"}
                 %input{type: :text, name: :site, class: "input-xlarge", style: "height: 30px;"}
                 %input{type: "submit", value: "Test", class: "btn btn-success"}
+        - if result = locals[:result]
+          %h2="#{result}"
