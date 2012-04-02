@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'shotgun'
 gem 'haml'
 gem 'faraday'
+gem 'rake'
 
 group :test do
   gem 'rspec'
