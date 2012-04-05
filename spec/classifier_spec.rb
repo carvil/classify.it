@@ -47,18 +47,18 @@ describe Classifier do
   describe ".classify" do
 
     let(:classif) {
-      Classifier.new(["k1","k2"], 10)
+      Classifier.new(["k1","k2","k3","k4","k5","k6"], 100)
     }
 
     context "given positive frequencies" do
       it "should return YES" do
-        classif.classify({"k1" => 5, "k2" => 8}).should eq("YES")
+        classif.classify({"k1" => 5, "k2" => 8, "k3" => 1, "k4" => 12, "k5" => 10, "k6" => 5}).should eq("YES")
       end
     end
 
     context "given negative frequencies" do
       it "should return NO" do
-        classif.classify({"k1" => 0, "k2" => 0}).should eq("NO")
+        classif.classify({"k1" => 0, "k2" => 0, "k3" => 0, "k4" => 0, "k5" => 0, "k6" => 0}).should eq("NO")
       end
     end
   end
