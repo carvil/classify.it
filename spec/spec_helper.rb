@@ -8,6 +8,8 @@
 require 'vcr'
 require File.join(File.dirname(__FILE__), '..', 'lib', 'page')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'frequency')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'classifier')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'techdata')
 
 
 RSpec.configure do |config|
