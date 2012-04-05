@@ -5,6 +5,7 @@ gem 'shotgun'
 gem 'haml'
 gem 'faraday'
 gem 'rake'
+gem 'ai4r'
 
 group :test do
   gem 'rspec'
