@@ -4,6 +4,7 @@ class Frequency
   def initialize(text, keys)
     @text, @keys = text, keys
     @freqs = Hash.new(0)
+    keys.each{|key| @freqs[key] = 0 } if keys
   end
 
   def self.count_frequency(text, keys)
@@ -17,8 +18,9 @@ class Frequency
 
   def frequencies
     if words
-      words.each { |word| freqs[word] += 1 }
+      words.each { |word| freqs[word.downcase] += 1 }
       freqs.reject{|k,v| !keys.include?(k)}
     end
   end
+
 end

@@ -19,7 +19,7 @@ describe Frequency do
 
     context "given a text and an array of keys that are not present in the text" do
       it "should return an empty hash" do
-        Frequency.count_frequency("this is an example", ["technology", "text"]).should eq({})
+        Frequency.count_frequency("this is an example", ["technology", "text"]).should eq({"technology"=>0, "text"=>0})
       end
     end
 
