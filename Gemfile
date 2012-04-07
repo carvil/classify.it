@@ -6,6 +6,7 @@ gem 'haml'
 gem 'faraday'
 gem 'rake'
 gem 'ai4r'
+gem 'foreman'
 
 group :test do
   gem 'rspec'
