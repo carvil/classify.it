@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'haml'
 require './lib/page'
 require './lib/frequency'
 require './lib/classifier'
@@ -20,13 +21,18 @@ class TechClassifier < Sinatra::Base
   # Classify a url
   post '/' do
     site = params[:site]
-    if content = Page.fetch_page(site)
-      frequency = Frequency.count_frequency(content, keywords)
-      result = options.classifier.classify(frequency)
-      haml :home, locals: {result: result, site: site}
+    reponse = ""
+    if site.empty?
+      response = "No URL given..."
     else
-      haml :home, locals: {result: result, site: site}
+      if content = Page.fetch_page(site)
+        frequency = Frequency.count_frequency(content, keywords)
+        response = options.classifier.classify(frequency)
+      else
+        response = "URL not valid, did you forget to add http/https?"
+      end
     end
+    haml :home, locals: {result: response, site: site}
   end
 
 end
